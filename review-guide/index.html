@@ -20,7 +20,7 @@
 <h2>Safety controls</h2>
 <ul>
 <li>SAFE MODE is the default.</li>
-<li>Scheduled collection never performs Like, Follow, Repost, or Reply.</li>
+<li>Scheduled collection never performs Like, Follow, Repost, or Reply.</li><li>Discovery runs are single-instance: overlapping manual/scheduled collectors are skipped rather than duplicated.</li><li>While public keyword search access is limited, scheduled discovery uses a low-call waiting/circuit-breaker state instead of repeatedly querying the full keyword set.</li>
 <li>Reply requires an explicit user action and is protected by cooldown/duplicate/daily-limit checks.</li>
 <li>Access tokens and the App Secret are not shown on public pages or review reports.</li>
 </ul>
