@@ -5,25 +5,43 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bomuhamu / BomBom Threads Manager</title>
 <style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#202124;background:#fff}body{max-width:900px;margin:0 auto;padding:40px 20px;line-height:1.65}h1,h2{line-height:1.25}.card{border:1px solid #ddd;border-radius:14px;padding:18px;margin:18px 0}a{color:#0b57d0}code{background:#f5f5f5;padding:.15em .35em;border-radius:4px}
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#202124;background:#fff}body{max-width:920px;margin:0 auto;padding:40px 20px;line-height:1.65}h1,h2{line-height:1.25}.card{border:1px solid #ddd;border-radius:14px;padding:18px;margin:18px 0}a{color:#0b57d0}code{background:#f5f5f5;padding:.15em .35em;border-radius:4px}.muted{color:#5f6368}
 </style>
 </head>
 <body>
 <h1>Bomuhamu / BomBom Threads Manager</h1>
-<p>Official policy and review-support pages for the personal Threads community management application used by the authenticated account owner.</p>
+<p>Official policy and review-support pages for a personal Threads community-management application operated by the authenticated account owner.</p>
 <div class="card">
 <h2>Application purpose</h2>
 <p>The application helps the user discover public hamster-related Threads posts, review public profiles, organize a local relationship queue, prepare language-appropriate greeting text, and record user-confirmed relationship actions.</p>
-<p>Public discovery uses approved Threads API capabilities. Like and Follow are not automated. A reply is sent only when the authenticated user explicitly chooses the reply action in the application.</p>
+<p>Public discovery uses approved Threads API capabilities. Like and Follow are not automated. Any API Reply requires an explicit action by the authenticated user in the application.</p>
 </div>
 <div class="card">
-<h2>Policy pages</h2>
+<h2>Permissions requested for public discovery</h2>
+<ul>
+<li><code>threads_keyword_search</code> — discover public hamster-related posts using explicit keywords selected by the user.</li>
+<li><code>threads_profile_discovery</code> — retrieve a public profile and recent public posts for an exact username selected by the user.</li>
+</ul>
+<p>The application does not use these permissions for private-profile access, follower scraping, bulk following, or autonomous engagement.</p>
+</div>
+<div class="card">
+<h2>Automation boundaries</h2>
+<ul>
+<li>Candidate collection, scoring, deduplication, queue prioritization, and local analytics can be automated.</li>
+<li>Like and Follow remain user-controlled actions in Threads.</li>
+<li>Reply actions are not scheduled and require an explicit user click.</li>
+<li>Local cooldowns, duplicate checks, daily limits, and a do-not-contact flag are applied to the workflow.</li>
+</ul>
+</div>
+<div class="card">
+<h2>Policy and review pages</h2>
 <ul>
 <li><a href="./privacy-policy/">Privacy Policy</a></li>
 <li><a href="./data-deletion/">User Data Deletion</a></li>
 <li><a href="./terms/">Terms of Service</a></li>
+<li><a href="./review-guide/">App Review Guide</a></li>
 </ul>
 </div>
-<p><small>Last updated: 2026-09-28</small></p>
+<p class="muted"><small>Last updated: 2026-10-11</small></p>
 </body>
 </html>
