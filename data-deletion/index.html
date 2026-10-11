@@ -1,15 +1,17 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>User Data Deletion - Bomuhamu</title>
-<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;max-width:900px;margin:0 auto;padding:40px 20px;line-height:1.65}h1,h2{line-height:1.25}a{color:#0b57d0}</style></head><body>
-<h1>User Data Deletion</h1><p><strong>Bomuhamu / BomBom Threads Manager</strong></p><p>Last updated: 2026-09-28</p>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;max-width:920px;margin:0 auto;padding:40px 20px;line-height:1.65}h1,h2{line-height:1.25}a{color:#0b57d0}code{background:#f5f5f5;padding:.15em .35em;border-radius:4px}</style></head><body>
+<h1>User Data Deletion</h1><p><strong>Bomuhamu / BomBom Threads Manager</strong></p><p>Last updated: 2026-10-11</p>
 <h2>How to remove application-controlled data</h2>
 <ol>
-<li>Revoke Bomuhamu's access from the relevant Meta/Threads account settings if future API access is no longer desired.</li>
+<li>Revoke Bomuhamu's access in the relevant Meta/Threads account settings if future API access is no longer desired.</li>
 <li>Stop Bomuhamu on the user's computer.</li>
-<li>Delete the local SQLite database and local configuration/token files from the Bomuhamu installation if local workflow data should be removed.</li>
+<li>Delete the local application database and other local workflow files from the Bomuhamu installation when local records should be removed.</li>
+<li>Remove locally stored authentication-token configuration if the application will no longer be used.</li>
 <li>If assistance is required, contact the developer address registered for the Bomuhamu Meta application and request deletion instructions.</li>
 </ol>
-<h2>Data covered</h2><p>Locally controlled data may include candidate records, public profile/post metadata cached for review, relationship states, action history, greeting text/history, configuration, and locally stored authentication tokens.</p>
-<h2>Meta-hosted data</h2><p>Content and account data controlled directly by Meta are subject to Meta's own account, privacy, and deletion controls. Revoking Bomuhamu's permission prevents future authorized API access but does not independently delete data hosted by Meta.</p>
+<h2>Data covered</h2><p>Locally controlled data may include candidate records, public profile/post metadata cached for review, relationship states, action history, greeting text/history, runtime status, configuration, and locally stored authentication tokens.</p>
+<h2>What deletion does not do</h2><p>Deleting Bomuhamu's local data does not delete content or account data hosted by Meta. Revoking Bomuhamu's permissions prevents future authorized API access. Content controlled directly by Meta remains subject to Meta's own account and deletion controls.</p>
+<h2>Confirmation</h2><p>For this personal-use deployment, local deletion is under the account owner's direct control. The application does not maintain a separate hosted user database.</p>
 <p><a href="../">Back to Bomuhamu</a></p>
 </body></html>
