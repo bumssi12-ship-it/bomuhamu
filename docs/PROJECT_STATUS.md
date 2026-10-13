@@ -1,6 +1,6 @@
 # Bomuhamu / BomBom Threads Manager — Verified Project Status
 
-**Last updated:** 2026-10-13 (JST)
+**Last updated:** 2026-10-14 (JST)
 **Purpose:** Preserve a reproducible handoff without implying that local Windows or Meta App Review steps have been completed.
 
 ## Canonical public policy repository
@@ -16,9 +16,10 @@
 
 | Gate | State | Evidence / caveat |
 |---|---|---|
-| Public policy pages | **PASS, exact HTML parity 5/5** | [GitHub Actions 38394160858](https://github.com/bumssi12-ship-it/bomuhamu/actions/runs/38394160858): all 5 publicly served pages returned HTTP 200 and SHA256 matched checked-out source on 2026-10-13 |
+| Public policy pages | **PASS, exact HTML parity 5/5** | [GitHub Actions 38470681136](https://github.com/bumssi12-ship-it/bomuhamu/actions/runs/38470681136): all 5 public HTML responses matched source SHA256 on 2026-10-14 JST |
+| Offline policy QA | **PASS** | [GitHub Actions 38470681136](https://github.com/bumssi12-ship-it/bomuhamu/actions/runs/38470681136): `scripts/validate_site.py` verified 5-page structure, required links, metadata and basic credential patterns |
 | GitHub Pages deployment | **PASS** | [GitHub Actions 38374289896](https://github.com/bumssi12-ship-it/bomuhamu/actions/runs/38374289896), success on 2026-10-13 |
-| Daily page monitoring | **CONFIGURED AND OBSERVED RUNNING** | `.github/workflows/meta-pages-health.yml`: daily and on-change checks now compare content SHA256 against the exact repository revision; push checks retry while Pages propagates |
+| Daily page monitoring | **CONFIGURED AND OBSERVED RUNNING** | `.github/workflows/meta-pages-health.yml`: daily and on-change checks, basic static site QA, internal link validation, source-parity checks, and deployment retry |
 | Meta App Review submission | **NOT VERIFIED** | Static pages do not indicate submission or approval |
 | `threads_keyword_search` public search access | **NOT VERIFIED** | Prior local testing showed own-account-only / LIMITED discovery |
 | `threads_profile_discovery` approval | **NOT VERIFIED** | Limited historical local evidence does not prove current App Review grant |
