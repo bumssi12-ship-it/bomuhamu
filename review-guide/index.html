@@ -1,28 +1,65 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>App Review Guide - Bomuhamu</title>
-<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;max-width:920px;margin:0 auto;padding:40px 20px;line-height:1.65}h1,h2{line-height:1.25}a{color:#0b57d0}code{background:#f5f5f5;padding:.15em .35em;border-radius:4px}</style></head><body>
-<h1>App Review Guide</h1><p><strong>Bomuhamu / BomBom Threads Manager</strong></p><p>Last updated: 2026-10-11</p>
-<h2><code>threads_keyword_search</code></h2>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>App Review Guide - Bomuhamu</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;max-width:920px;margin:0 auto;padding:40px 20px;line-height:1.65;color:#202124}
+h1,h2{line-height:1.25}a{color:#0b57d0}code{background:#f5f5f5;padding:.15em .35em;border-radius:4px}
+aside{padding:14px 18px;border:1px solid #ddd;border-radius:10px;background:#fafafa}li{margin:.3em 0}
+</style></head><body>
+<h1>Meta App Review Guide</h1>
+<p><strong>Bomuhamu / BomBom Threads Manager</strong></p>
+<p>Last updated: 2026-10-13</p>
+<aside><strong>What this page is:</strong> Testing and permission-use instructions for a personal Windows-based Threads community management app.
+This is a documentation website, not the app itself, and does not indicate that Meta has approved the requested permissions.
+Reviewer access, a screencast and the permission request must be supplied through Meta App Dashboard by the app administrator.</aside>
+
+<h2>1. Sign-in and review setup</h2>
 <ol>
-<li>Authorize the test account through Threads OAuth.</li>
-<li>Open Candidate Discovery and run Search now.</li>
-<li>Review public hamster-related results returned for explicit Japanese, Korean, or English hamster keywords.</li>
-<li>Open a returned public post/profile from the application.</li>
-<li>Observe that Like and Follow are not executed by the application; the user performs those actions in Threads and records completion locally.</li>
+<li>Start the local BomBom Threads Manager application on Windows and open its Streamlit interface.</li>
+<li>Use the application's Threads authorization/re-authorization flow to show the Meta/Threads OAuth consent and the permissions being requested. Never expose an access token, client secret or private configuration in the video.</li>
+<li>Show the connected authorized Threads account and current permission status inside the app.</li>
+<li>For the review submission, provide a screen recording of these steps and any reviewer access instructions required by Meta App Dashboard. A public GitHub Pages URL is not a substitute for functional app access or a demonstration.</li>
 </ol>
-<h2><code>threads_profile_discovery</code></h2>
+
+<h2>2. <code>threads_keyword_search</code> — user-initiated public content discovery</h2>
+<p><strong>Why requested:</strong> The authenticated user searches public hamster-related discussions and reviews relevant posts for their own community account. Search terms are chosen or reviewed by the user, for example <code>hamster</code>, <code>ハムスター</code>, or <code>햄스터</code>.</p>
 <ol>
-<li>Enter an exact public Threads username in Direct Account Registration.</li>
-<li>Run Profile Lookup to retrieve the public profile.</li>
-<li>Import recent public profile posts for candidate review and hamster relevance scoring.</li>
-<li>Observe that the local relationship queue stores only workflow fields needed for review and tracking.</li>
+<li>Open Candidate Discovery and enter a hamster-related keyword.</li>
+<li>Run Search Now and display the returned public posts, their links and candidate scoring.</li>
+<li>Open a selected public post for user review, showing the connection between the search result and the local candidate queue.</li>
+<li>Show that Like and Follow are <strong>not</strong> executed automatically. User confirmation is recorded separately.</li>
 </ol>
-<h2>Safety controls</h2>
+<p><strong>Limited-access behavior:</strong> If the app is not granted the relevant public-search access level, search may be restricted to the authenticated account's own content. The app reports a limited state and uses a low-call waiting mode rather than pretending that external public discovery succeeded.</p>
+
+<h2>3. <code>threads_profile_discovery</code> — exact public profile lookup</h2>
+<p><strong>Why requested:</strong> The user reviews an explicitly specified public Threads account and its recent public posts to understand account relevance before deciding whether to engage manually.</p>
+<ol>
+<li>Open Direct Account Registration and enter an exact public Threads username.</li>
+<li>Run Profile Lookup and display the returned public profile.</li>
+<li>Retrieve and review public profile posts where the granted API access permits them.</li>
+<li>Show that the relationship queue is a local organizational record, not a bulk-follow mechanism.</li>
+</ol>
+
+<h2>4. Safeguards and user control</h2>
 <ul>
-<li>SAFE MODE is the default.</li>
-<li>Scheduled collection never performs Like, Follow, Repost, or Reply.</li><li>Discovery runs are single-instance: overlapping manual/scheduled collectors are skipped rather than duplicated.</li><li>While public keyword search access is limited, scheduled discovery uses a low-call waiting/circuit-breaker state instead of repeatedly querying the full keyword set.</li>
-<li>Reply requires an explicit user action and is protected by cooldown/duplicate/daily-limit checks.</li>
-<li>Access tokens and the App Secret are not shown on public pages or review reports.</li>
+<li>SAFE MODE is the default; scheduled collection does not perform Like, Follow, Repost or Reply.</li>
+<li>Overlapping manual and scheduled collection runs are prevented from running simultaneously.</li>
+<li>When public search access is limited, scheduled discovery uses a low-call waiting state.</li>
+<li>Any API reply requires an explicit user action and remains subject to duplicate/cooldown/daily-limit safeguards.</li>
+<li>The workflow does not access private Threads profiles, scrape follower lists, or bypass platform access controls.</li>
+<li>Tokens and app secrets must not appear in reports, videos, screenshots or this website.</li>
 </ul>
+
+<h2>5. Before submitting through Meta App Dashboard</h2>
+<ol>
+<li>Confirm that the requested permission names and real enabled capabilities match the actual app build.</li>
+<li>Provide a complete OAuth and in-app feature demonstration for each requested permission.</li>
+<li>Describe any restricted-access behavior accurately rather than showing simulated or invented search results as real API output.</li>
+<li>Provide the reviewer's supported access path and necessary testing instructions, if requested by Meta.</li>
+<li>Submit from Meta App Dashboard and check its decision there. Publication of this website does not submit an App Review request.</li>
+</ol>
+
+<h2>Policy pages</h2>
+<p><a href="../privacy-policy/">Privacy Policy</a> · <a href="../data-deletion/">User Data Deletion</a> · <a href="../terms/">Terms of Service</a></p>
 <p><a href="../">Back to Bomuhamu</a></p>
 </body></html>
