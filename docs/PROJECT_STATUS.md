@@ -16,9 +16,9 @@
 
 | Gate | State | Evidence / caveat |
 |---|---|---|
-| Public policy pages | **PASS** | [GitHub Actions 38374290905](https://github.com/bumssi12-ship-it/bomuhamu/actions/runs/38374290905): all 5 URLs returned HTTP 200 with expected content on 2026-10-13 |
+| Public policy pages | **PASS, exact HTML parity 5/5** | [GitHub Actions 38394160858](https://github.com/bumssi12-ship-it/bomuhamu/actions/runs/38394160858): all 5 publicly served pages returned HTTP 200 and SHA256 matched checked-out source on 2026-10-13 |
 | GitHub Pages deployment | **PASS** | [GitHub Actions 38374289896](https://github.com/bumssi12-ship-it/bomuhamu/actions/runs/38374289896), success on 2026-10-13 |
-| Daily page monitoring | **CONFIGURED AND OBSERVED RUNNING** | `.github/workflows/meta-pages-health.yml`, scheduled daily with on-change checks |
+| Daily page monitoring | **CONFIGURED AND OBSERVED RUNNING** | `.github/workflows/meta-pages-health.yml`: daily and on-change checks now compare content SHA256 against the exact repository revision; push checks retry while Pages propagates |
 | Meta App Review submission | **NOT VERIFIED** | Static pages do not indicate submission or approval |
 | `threads_keyword_search` public search access | **NOT VERIFIED** | Prior local testing showed own-account-only / LIMITED discovery |
 | `threads_profile_discovery` approval | **NOT VERIFIED** | Limited historical local evidence does not prove current App Review grant |
